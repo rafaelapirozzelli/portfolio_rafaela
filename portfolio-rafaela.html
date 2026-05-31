@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+ <title>Rafaela Giannini Pirozzelli | Portfólio</title>
+ 
+ <!-- Bootstrap 5 -->
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+ 
+ <!-- Fontes -->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ 
+ <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+ 
+ <style>
+ 
+   /* =========================================
+      CONFIGURAÇÕES GERAIS
+   ========================================== */
+ 
+   *{
+     margin:0;
+     padding:0;
+     box-sizing:border-box;
+   }
+ 
+   html{
+     scroll-behavior:smooth;
+   }
+ 
+   body{
+     background:#090909;
+     color:#f5f5f5;
+     font-family:'Inter', sans-serif;
+     overflow-x:hidden;
+     position:relative;
+   }
+ 
+   body::before{
+     content:"";
+     position:fixed;
+     inset:0;
+     background:
+     radial-gradient(circle at top left, rgba(28,75,53,0.25), transparent 35%),
+     radial-gradient(circle at bottom right, rgba(63,109,84,0.15), transparent 30%);
+     z-index:-2;
+   }
+ 
+   body::after{
+     content:"";
+     position:fixed;
+     inset:0;
+     background-image:url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+     opacity:0.18;
+     z-index:-1;
+     pointer-events:none;
+   }
+ 
+   h1,h2,h3,h4,h5{
+     font-family:'Cormorant Garamond', serif;
+     letter-spacing:1px;
+   }
+ 
+   section{
+     padding:110px 0;
+   }
+ 
+   .section-title{
+     font-size:3.4rem;
+     margin-bottom:20px;
+     color:#e7fff1;
+   }
+ 
+   .section-subtitle{
+     color:#b3bbb7;
+     max-width:700px;
+     line-height:1.9;
+     margin-bottom:60px;
+   }
+ 
+   /* =========================================
+      NAVBAR
+   ========================================== */
+ 
+   .navbar{
+     background:rgba(0,0,0,0.88);
+     backdrop-filter:blur(12px);
+     border-bottom:1px solid rgba(255,255,255,0.05);
+   }
+ 
+   .navbar-brand{
+     font-family:'Cormorant Garamond', serif;
+     font-size:1.8rem;
+     color:#dfffe9 !important;
+     letter-spacing:1px;
+   }
+ 
+   .nav-link{
+     color:#d7d7d7 !important;
+     margin-left:15px;
+     transition:0.3s;
+     position:relative;
+   }
+ 
+   .nav-link:hover{
+     color:#7ecf9f !important;
+   }
+ 
+   .nav-link::after{
+     content:"";
+     width:0%;
+     height:1px;
+     background:#7ecf9f;
+     position:absolute;
+     left:0;
+     bottom:0;
+     transition:0.4s;
+   }
+ 
+   .nav-link:hover::after{
+     width:100%;
+   }
+ 
+   /* =========================================
+      HERO
+   ========================================== */
+ 
+   .hero{
+     min-height:100vh;
+     display:flex;
+     align-items:center;
+     position:relative;
+     padding-top:120px;
+   }
+ 
+   .hero-title{
+     font-size:5.8rem;
+     line-height:0.95;
+     margin-bottom:30px;
+   }
+ 
+   .hero-title span{
+     color:#7ecf9f;
+   }
+ 
+   .hero-text{
+     max-width:700px;
+     line-height:2;
+     color:#c0c8c4;
+     margin-bottom:35px;
+     font-size:1.05rem;
+   }
+ 
+   .btn-custom{
+     background:#1d3a2b;
+     color:white;
+     border:none;
+     border-radius:0;
+     padding:14px 30px;
+     letter-spacing:1px;
+     transition:0.4s;
+   }
+ 
+   .btn-custom:hover{
+     background:#3c6b52;
+     transform:translateY(-2px);
+   }
+
+   /* =========================================
+      FOTO HERO
+   ========================================== */
+
+   .hero-photo-frame{
+     position:relative;
+     width:340px;
+     max-width:100%;
+   }
+
+   .hero-photo-frame img{
+     width:100%;
+     height:500px;
+     object-fit:cover;
+     object-position:top;
+     display:block;
+     filter:grayscale(15%) contrast(1.05);
+     border:1px solid rgba(126,207,159,0.15);
+   }
+
+   .hero-photo-accent{
+     position:absolute;
+     bottom:-14px;
+     left:-14px;
+     width:55%;
+     height:3px;
+     background:#4d8f69;
+   }
+ 
+   /* =========================================
+      MOSAICO ASSIMÉTRICO
+   ========================================== */
+ 
+   .mosaic{
+     margin-top:80px;
+   }
+ 
+   .mosaic-card{
+     position:relative;
+     overflow:hidden;
+     background:#111111;
+     border:1px solid rgba(255,255,255,0.06);
+     padding:35px;
+     transition:0.4s;
+   }
+ 
+   .mosaic-card:hover{
+     transform:translateY(-6px);
+     border-color:#4d8f69;
+   }
+ 
+   .mosaic-card.large{
+     min-height:520px;
+   }
+ 
+   .mosaic-card.medium{
+     min-height:250px;
+   }
+ 
+   .mosaic-card.small{
+     min-height:240px;
+   }
+ 
+   .mosaic-number{
+     position:absolute;
+     top:15px;
+     right:25px;
+     font-size:4rem;
+     color:rgba(255,255,255,0.04);
+     font-family:'Cormorant Garamond', serif;
+   }
+ 
+   .mosaic-card h3{
+     font-size:2.2rem;
+     margin-bottom:18px;
+     color:#f2fff8;
+   }
+ 
+   .mosaic-card p{
+     color:#b9c0bc;
+     line-height:1.9;
+   }
+ 
+   /* =========================================
+      SOBRE
+   ========================================== */
+ 
+   .about-box{
+     border-left:2px solid #4e8b67;
+     padding-left:30px;
+   }
+ 
+   .about-box p{
+     line-height:2;
+     color:#c8cfcb;
+     margin-bottom:25px;
+   }
+ 
+   .custom-badge{
+     background:#183124;
+     color:#9fe0ba;
+     border:1px solid rgba(126,207,159,0.25);
+     border-radius:0;
+     padding:10px 14px;
+     margin:5px;
+     font-weight:500;
+   }
+ 
+   /* =========================================
+      PROJETOS
+   ========================================== */
+ 
+   .project-card{
+     background:#111111;
+     border:none;
+     border-radius:0;
+     overflow:hidden;
+     height:100%;
+     transition:0.4s;
+     border:1px solid rgba(255,255,255,0.05);
+   }
+ 
+   .project-card:hover{
+     transform:translateY(-8px);
+     border-color:#5b9c76;
+   }
+ 
+   .project-image{
+     height:250px;
+     background:
+     linear-gradient(135deg,#13251d,#264637);
+     position:relative;
+   }
+ 
+   .project-image::after{
+     content:"";
+     position:absolute;
+     inset:0;
+     background:
+     linear-gradient(to bottom,
+     transparent,
+     rgba(0,0,0,0.45));
+   }
+ 
+   .card-body{
+     padding:32px;
+   }
+ 
+   .project-title{
+     font-size:2rem;
+     margin-bottom:14px;
+     color:#effff6;
+   }
+ 
+   .project-text{
+     color:#c0c7c3;
+     line-height:1.9;
+     margin-bottom:22px;
+   }
+ 
+   .year-badge{
+     background:#254333;
+     color:#9de2bd;
+     border-radius:0;
+     padding:8px 14px;
+     margin-bottom:18px;
+   }
+ 
+   /* =========================================
+      CONTATO
+   ========================================== */
+ 
+   .contact-box{
+     background:#111111;
+     padding:55px;
+     border:1px solid rgba(255,255,255,0.05);
+   }
+ 
+   .contact-item{
+     margin-bottom:30px;
+   }
+ 
+   .contact-label{
+     color:#7ecf9f;
+     text-transform:uppercase;
+     letter-spacing:2px;
+     font-size:0.85rem;
+     margin-bottom:10px;
+   }
+ 
+   .contact-value{
+     font-size:1.15rem;
+     color:#f0f0f0;
+   }
+ 
+   /* =========================================
+      FOOTER
+   ========================================== */
+ 
+   footer{
+     padding:40px 0;
+     border-top:1px solid rgba(255,255,255,0.05);
+     text-align:center;
+     color:#888;
+     font-size:0.95rem;
+   }
+ 
+   /* =========================================
+      ANIMAÇÕES
+   ========================================== */
+ 
+   .fade-up{
+     opacity:0;
+     transform:translateY(35px);
+     animation:fadeUp 1s ease forwards;
+   }
+ 
+   .delay-1{
+     animation-delay:0.2s;
+   }
+ 
+   .delay-2{
+     animation-delay:0.4s;
+   }
+ 
+   .delay-3{
+     animation-delay:0.6s;
+   }
+ 
+   @keyframes fadeUp{
+     to{
+       opacity:1;
+       transform:translateY(0);
+     }
+   }
+ 
+   /* =========================================
+      RESPONSIVIDADE
+   ========================================== */
+ 
+   @media(max-width:991px){
+ 
+     .hero-title{
+       font-size:4rem;
+     }
+ 
+     .mosaic-card.large{
+       min-height:350px;
+     }
+
+     .hero-photo-frame{
+       width:100%;
+       margin-top:50px;
+     }
+
+     .hero-photo-frame img{
+       height:380px;
+     }
+ 
+   }
+ 
+   @media(max-width:768px){
+ 
+     section{
+       padding:80px 0;
+     }
+ 
+     .hero-title{
+       font-size:3rem;
+     }
+ 
+     .section-title{
+       font-size:2.5rem;
+     }
+ 
+     .contact-box{
+       padding:35px;
+     }
+ 
+   }
+ 
+ </style>
+</head>
+ 
+<body>
+ 
+ <!-- NAVBAR -->
+ 
+ <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+ 
+   <div class="container">
+ 
+     <a class="navbar-brand" href="#">
+       Rafaela Giannini
+     </a>
+ 
+     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+       <span class="navbar-toggler-icon"></span>
+     </button>
+ 
+     <div class="collapse navbar-collapse" id="menu">
+ 
+       <ul class="navbar-nav ms-auto">
+ 
+         <li class="nav-item">
+           <a class="nav-link" href="#home">Início</a>
+         </li>
+ 
+         <li class="nav-item">
+           <a class="nav-link" href="#sobre">Sobre</a>
+         </li>
+ 
+         <li class="nav-item">
+           <a class="nav-link" href="#projetos">Projetos</a>
+         </li>
+ 
+         <li class="nav-item">
+           <a class="nav-link" href="#contato">Contato</a>
+         </li>
+ 
+       </ul>
+ 
+     </div>
+ 
+   </div>
+ 
+ </nav>
+ 
+ <!-- HERO -->
+ 
+ <section class="hero" id="home">
+ 
+   <div class="container">
+ 
+     <div class="row align-items-end">
+ 
+       <div class="col-lg-7">
+ 
+         <h1 class="hero-title fade-up">
+           Rafaela <span>Giannini</span><br>
+           Pirozzelli
+         </h1>
+ 
+         <p class="hero-text fade-up delay-1">
+           Roteirista apaixonada por narrativas cinematográficas,
+           estética noir e personagens marcados por tensão,
+           identidade e relações de poder.
+         </p>
+ 
+         <a href="#projetos" class="btn btn-custom fade-up delay-2">
+           Explorar Projetos
+         </a>
+ 
+       </div>
+ 
+       <div class="col-lg-5 d-flex justify-content-end align-items-end fade-up delay-1">
+ 
+         <div class="hero-photo-frame">
+           <img src="assets/imagem_rafa.jpeg" alt="Rafaela Giannini Pirozzelli">
+           <div class="hero-photo-accent"></div>
+         </div>
+ 
+       </div>
+ 
+     </div>
+ 
+     <!-- MOSAICO -->
+ 
+     <div class="row mosaic g-4">
+ 
+       <div class="col-lg-4 col-md-6">
+ 
+         <div class="mosaic-card large fade-up delay-1">
+ 
+           <div class="mosaic-number">01</div>
+ 
+           <h3>Sobre</h3>
+ 
+           <p>
+             Formação em Cinema e Audiovisual pela ESPM,
+             com trajetória voltada para escrita criativa,
+             cinema autoral e construção narrativa.
+           </p>
+ 
+         </div>
+ 
+       </div>
+ 
+       <div class="col-lg-4 col-md-6">
+ 
+         <div class="mosaic-card medium fade-up delay-2">
+ 
+           <div class="mosaic-number">02</div>
+ 
+           <h3>Projetos</h3>
+ 
+           <p>
+             Curtas e documentários que exploram mídia,
+             identidade, meio ambiente e soft power.
+           </p>
+ 
+         </div>
+ 
+         <div class="mosaic-card small mt-4 fade-up delay-3">
+ 
+           <div class="mosaic-number">03</div>
+ 
+           <h3>Literatura</h3>
+ 
+           <p>
+             Autora dos livros "Mérope" e "Atlantis",
+             desenvolvendo narrativas desde cedo.
+           </p>
+ 
+         </div>
+ 
+       </div>
+ 
+       <div class="col-lg-4">
+ 
+         <div class="mosaic-card large fade-up delay-2">
+ 
+           <div class="mosaic-number">04</div>
+ 
+           <h3>Estética</h3>
+ 
+           <p>
+             Visual inspirado pelo cinema black noir,
+             atmosfera analógica, texturas escuras
+             e composições editoriais cinematográficas.
+           </p>
+ 
+           <div class="mt-4">
+ 
+             <span class="badge custom-badge">
+               Noir
+             </span>
+ 
+             <span class="badge custom-badge">
+               Cinema
+             </span>
+ 
+             <span class="badge custom-badge">
+               Narrativa
+             </span>
+ 
+             <span class="badge custom-badge">
+               Audiovisual
+             </span>
+ 
+           </div>
+ 
+         </div>
+ 
+       </div>
+ 
+     </div>
+ 
+   </div>
+ 
+ </section>
+ 
+ <!-- SOBRE -->
+ 
+ <section id="sobre">
+ 
+   <div class="container">
+ 
+     <h2 class="section-title fade-up">
+       Sobre Mim
+     </h2>
+ 
+     <p class="section-subtitle fade-up delay-1">
+       Minha trajetória artística começou através da escrita,
+       evoluindo naturalmente para o audiovisual e o cinema.
+     </p>
+ 
+     <div class="row align-items-center g-5">
+ 
+       <div class="col-lg-8">
+ 
+         <div class="about-box fade-up delay-2">
+ 
+           <p>
+             Estudei no Externato Santo Antônio,
+             no Liceu Jardim e na Escola Villare,
+             onde sempre fui incentivada a desenvolver minha escrita.
+           </p>
+ 
+           <p>
+             Ao longo dos anos, me aprofundei tanto
+             na escrita de romances — tendo escrito os livros
+             autorais "Mérope" e "Atlantis" —
+             quanto em textos dissertativo-argumentativos,
+             fortalecendo minha paixão pela narrativa.
+           </p>
+ 
+           <p>
+             Esse interesse pela escrita, somado ao meu amor pelo cinema
+             e à experiência na eletiva de cinema cursada no primeiro ano
+             do Ensino Médio, me levaram até o curso de Cinema e Audiovisual da ESPM.
+           </p>
+ 
+         </div>
+ 
+       </div>
+ 
+       <div class="col-lg-4">
+ 
+         <div class="fade-up delay-3">
+ 
+           <span class="badge custom-badge">Roteiro</span>
+           <span class="badge custom-badge">Cinema Noir</span>
+           <span class="badge custom-badge">Narrativa</span>
+           <span class="badge custom-badge">Literatura</span>
+           <span class="badge custom-badge">Documentário</span>
+           <span class="badge custom-badge">Audiovisual</span>
+ 
+         </div>
+ 
+       </div>
+ 
+     </div>
+ 
+   </div>
+ 
+ </section>
+ 
+ <!-- PROJETOS -->
+ 
+ <section id="projetos">
+ 
+   <div class="container">
+ 
+     <h2 class="section-title fade-up">
+       Projetos
+     </h2>
+ 
+     <p class="section-subtitle fade-up delay-1">
+       Produções audiovisuais que exploram identidade,
+       sociedade, mídia e comportamento humano.
+     </p>
+ 
+     <div class="row g-4">
+ 
+       <!-- PROJETO 1 -->
+ 
+       <div class="col-lg-4 col-md-6">
+ 
+         <div class="card project-card fade-up delay-1">
+ 
+           <div class="project-image"></div>
+ 
+           <div class="card-body">
+ 
+             <span class="badge year-badge">
+               2026
+             </span>
+ 
+             <h3 class="project-title">
+               A Segunda Alma
+             </h3>
+ 
+             <p class="project-text">
+               Inspirado no conto "O Espelho", de Machado de Assis,
+               o curta acompanha Jacobina, uma jovem influenciadora
+               que se perde na fama e na própria imagem.
+             </p>
+ 
+             <button class="btn btn-custom">
+               Drama Psicológico
+             </button>
+ 
+           </div>
+ 
+         </div>
+ 
+       </div>
+ 
+       <!-- PROJETO 2 -->
+ 
+       <div class="col-lg-4 col-md-6">
+ 
+         <div class="card project-card fade-up delay-2">
+ 
+           <div class="project-image"></div>
+ 
+           <div class="card-body">
+ 
+             <span class="badge year-badge">
+               2026
+             </span>
+ 
+             <h3 class="project-title">
+               Mini Documentário
+             </h3>
+ 
+             <p class="project-text">
+               O contraste entre cidade e campo é utilizado
+               para discutir criticamente os impactos humanos
+               sobre o meio ambiente e as relações de exploração.
+             </p>
+ 
+             <button class="btn btn-custom">
+               Documentário
+             </button>
+ 
+           </div>
+ 
+         </div>
+ 
+       </div>
+ 
+       <!-- PROJETO 3 -->
+ 
+       <div class="col-lg-4 col-md-6">
+ 
+         <div class="card project-card fade-up delay-3">
+ 
+           <div class="project-image"></div>
+ 
+           <div class="card-body">
+ 
+             <span class="badge year-badge">
+               2026
+             </span>
+ 
+             <h3 class="project-title">
+               Alicerces do Brasil
+             </h3>
+ 
+             <p class="project-text">
+               Vitor, um jovem conspiracionista,
+               tenta documentar um suposto grupo que domina
+               o soft power brasileiro observando seu vizinho Fernandes,
+               aparentemente apenas mais um cidadão comum.
+             </p>
+ 
+             <button class="btn btn-custom">
+               Suspense Social
+             </button>
+ 
+           </div>
+ 
+         </div>
+ 
+       </div>
+ 
+     </div>
+ 
+   </div>
+ 
+ </section>
+ 
+ <!-- CONTATO -->
+ 
+ <section id="contato">
+ 
+   <div class="container">
+ 
+     <h2 class="section-title fade-up">
+       Contato
+     </h2>
+ 
+     <p class="section-subtitle fade-up delay-1">
+       Aberta a projetos audiovisuais,
+       desenvolvimento de roteiros e colaborações criativas.
+     </p>
+ 
+     <div class="row justify-content-center">
+ 
+       <div class="col-lg-8">
+ 
+         <div class="contact-box fade-up delay-2">
+ 
+           <div class="contact-item">
+ 
+             <div class="contact-label">
+               E-mail
+             </div>
+ 
+             <div class="contact-value">
+               rafaelagiannini2007@gmail.com
+             </div>
+ 
+           </div>
+ 
+           <div class="contact-item">
+ 
+             <div class="contact-label">
+               Instagram
+             </div>
+ 
+             <div class="contact-value">
+               @fafagiannini
+             </div>
+ 
+           </div>
+ 
+           <div class="contact-item">
+ 
+             <div class="contact-label">
+               Área
+             </div>
+ 
+             <div class="contact-value">
+               Cinema • Roteiro • Audiovisual
+             </div>
+ 
+           </div>
+ 
+         </div>
+ 
+       </div>
+ 
+     </div>
+ 
+   </div>
+ 
+ </section>
+ 
+ <!-- FOOTER -->
+ 
+ <footer>
+ 
+   <div class="container">
+     © 2026 — Portfólio de Rafaela Giannini Pirozzelli
+   </div>
+ 
+ </footer>
+ 
+ <!-- Bootstrap JS -->
+ 
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+ 
+</body>
+</html>
